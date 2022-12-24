@@ -1,10 +1,8 @@
 import React from "react";
 
-type BlockType = {
-    id: string
+type BlockType = {    
     title: string
     tasks: any
-    deleteTask: (id: any, blockID: any) => void
 }
 
 export const Block = (props: BlockType) => {
@@ -17,9 +15,6 @@ export const Block = (props: BlockType) => {
                     return (
                         <li key={el.id}>
                             <span>{el.title}</span>
-                            <button onClick={() => {
-                                props.deleteTask(el.id, props.id)
-                            }}>x</button>
                         </li>
                     )
                 })}
